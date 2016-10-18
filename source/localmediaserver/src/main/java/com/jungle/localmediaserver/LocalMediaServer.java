@@ -21,7 +21,7 @@ import java.net.Socket;
 import java.net.URLEncoder;
 
 /*
- * Local-Video-Server for streaming-video.
+ * Local-Media-Server for streaming-video.
  *
  * Receive & Handle Http Requests:
  *      |
