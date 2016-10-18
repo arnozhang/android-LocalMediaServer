@@ -1,5 +1,4 @@
 # android-LocalMediaServer 简介
----
 
 `android-LocalMediaServer` 用来在本地搭建一个 MediaServer，提供 `Audio/Video` 数据提供服务。
 
