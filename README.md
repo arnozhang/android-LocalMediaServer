@@ -37,7 +37,7 @@ mediaPlayer.start();
 
 上面提供的方法，第一种会泄露文件——解密后用户仍然可以将解密后的文件拷贝出去；第二种（亦即本例）方法的安全性稍有提高，但仍然`无法彻底避免`加密后的视频文件被获取到——充其量只是`提高了一点技术壁垒`，增加了大量复制传播的成本而已。
 
-通过 LocalMediaServer，将一个本地文件转换为类似 `http://localserver:port/encode_filepath` 类似的 URL，然后通过 Android 中的 `ServerSocket` 监听 port 端口，按 **`Http Live Streaming`** 的要求将数据返回即可。在返回数据时，根据数据段先解密相应数据，再返回数据。
+通过 LocalMediaServer，将一个本地文件转换为类似 `http://localserver:port/encode_filepath` 类似的 URL，然后通过 Android 中的 `ServerSocket` 监听 port 端口，按 **`Http Live Streaming`**(利用好 **206** Http 返回码以及 `Content-Range` 字段) 的要求将数据返回即可。在返回数据时，根据数据段先解密相应数据，再返回数据。
 
 这种方案，如果别人要获取你解密的视频，其实也是比较容易的——因为他可以在手机端抓包，获取到你正在播放的 URL，然后他用一个 HTTP 请求，就可以很容易的将你的整个文件 Download 下来。
 
