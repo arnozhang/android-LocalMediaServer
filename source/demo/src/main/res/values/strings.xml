@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">localmediaserver</string>
+    <string name="play_btn">Play Media</string>
+</resources>
